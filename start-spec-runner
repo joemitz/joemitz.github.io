@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# check for X server if running on WSL
+if grep -qi microsoft /proc/version; then
+  if ! timeout 1s xset q &>/dev/null; then
+    # X server is not running
+    echo "X server is not running! Run XLaunch from Windows and try again."
+    exit 1
+  fi
+fi
+
+# install cypress globally if not installed
+if ! command -v cypress &>/dev/null; then
+  npm install cypress --global
+fi
+
+cypress open --project . --config-file "spec/config.json"
