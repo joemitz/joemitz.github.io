@@ -8,26 +8,24 @@ $(document).ready(function() {
     
     for (var i = tweets.length - 1; i >= 0; i--) {
       var tweet = tweets[i];
-      var $tweet = $('<div class="tweet"></div>');
-      var $profilephoto = $('<img class="profile-photo"></img>');
-      var $username = $('<div class="username"></div>');
-      var $message = $('<div class="message"></div>');
-      var $timestamp = $('<div class="timestamp"></div>');
-      var $comment = $('<i class="fas fa-comment comment"></i>');
-      var $retweet = $('<i class="fas fa-retweet retweet"></i>');
-      var $like = $('<i class="fas fa-heart like"></i>');
-      var $share = $('<i class="fas fa-share share"></i>');
       
-      //var $pic = $('<div class="pic">][</div>');
+      var $tweet =        $('<div class="tweet"></div>');
+      var $profilephoto = $('<img class="profile-photo"></img>');
+      var $username =     $('<div class="username"></div>');
+      var $timestamp =    $('<div class="timestamp"></div>');
+      var $message =      $('<div class="message"></div>');
+      var $comment =      $('<i class="fas fa-comment comment"></i>');
+      var $retweet =      $('<i class="fas fa-retweet retweet"></i>');
+      var $like =         $('<i class="fas fa-heart like"></i>');
+      var $share =        $('<i class="fas fa-share share"></i>');
 
       $profilephoto.attr('src', tweet.profilePhotoURL);
       $username.text('@' + tweet.user);
-      $message.text(tweet.message);
       $timestamp.text(jQuery.timeago(tweet.created_at));
+      $message.text(tweet.message);
       
       $tweet.appendTo($feed);
       $profilephoto.appendTo($tweet);
-      //$pic.appendTo($tweet);
       $username.appendTo($tweet);
       $timestamp.appendTo($tweet);
       $message.appendTo($tweet);
@@ -54,19 +52,15 @@ $(document).ready(function() {
 
   var addVisitorTweet = function(newTweet) {
     var username = newTweet.user;
-    if (streams.users[username] === undefined) {
-      streams.users[username] = [newTweet];
-    } else {
-      streams.users[username].push(newTweet);
-    }
+    streams.users[username] === undefined ?
+    streams.users[username] = [newTweet] :
+    streams.users[username].push(newTweet);
     streams.home.push(newTweet);
     renderFeed();
   };
 
   var $app = $('#app');
-
-  var $title = $('<h1 id=title>Tw][ddler</h1>');
-
+  
   var $layout = $(
     '<div id="container">' + 
       '<div id="box1"></div>' +
@@ -77,8 +71,10 @@ $(document).ready(function() {
    
   var $newTweetForm = $(
     '<form id="new-tweet-form" autocomplete="off" onsubmit="return false">' +
-      '<label>Username</label><br><input type="text" maxlength="12" name="username"><br>' +
-      '<label>Message</label><br><textarea rows="5" cols="16" maxlength="77" name="message"></textarea><br>' +
+      '<label>Username</label><br>' + 
+        '<input type="text" maxlength="12" name="username"><br>' +
+      '<label>Message</label><br> ' +
+        '<textarea rows="5" cols="16" maxlength="77" name="message"></textarea><br>' +
       '<input type="submit" name="submit" value="Submit">' +
     '</form>'
   );
@@ -90,21 +86,20 @@ $(document).ready(function() {
     '<div id=friends>' +
     '<span>Friends</span>' +
     '<ul id="friends-list">' +
-      '<li id="friend" class="f1">mracus</li>' +
-      '<li id="friend" class="f2">shawndrost</li>' +
-      '<li id="friend" class="f3">douglascalhoun</li>' +
-      '<li id="friend" class="f4">sharksforcheap</li>' +
+      '<li id="friend">mracus</li>' +
+      '<li id="friend">shawndrost</li>' +
+      '<li id="friend">douglascalhoun</li>' +
+      '<li id="friend">sharksforcheap</li>' +
     '</ul></div'
   );
 
   $app.html('');
-  //$title.appendTo('body');
   $layout.appendTo($app);
   $updateBtn.appendTo('#box1');
   $newTweetForm.appendTo('#box1');
   $feed.appendTo('#box2');
   $friendsList.appendTo('#box3');
-  
+
   renderFeed();
   
   $updateBtn.on("click", function(event) {
@@ -114,7 +109,7 @@ $(document).ready(function() {
     renderFeed();
   });
 
-  $("#new-tweet-form").submit(function(event) {
+  $("form").submit(function(event) {
     var values = $(this).serializeArray();
     var username = values[0]['value'];
     var message = values[1]['value'];
@@ -122,7 +117,7 @@ $(document).ready(function() {
     this.reset();
   });
 
-  $(".f1, .f2, .f3, .f4").on("click", function(event) {
+  $("li").on("click", function(event) {
     renderFeed(this.innerText);
     $updateBtn.text('Back');
   });

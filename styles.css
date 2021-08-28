@@ -4,32 +4,17 @@
 }
 
 #header h1 {
-  text-align: center;
   margin-top: 12px;
   letter-spacing: 1px;
+  text-align: center;
   text-shadow: 3px 3px 1px #1d6717de;
 }
 
 body {
-  margin: 0;
-  font-family: appleII, sans-serif;
   background-color: #061e0d;
+  font-family: appleII, sans-serif;
   color: #4ef341;
   font-size: 15px;
-}
-
-#title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-  letter-spacing: 1px;
-  text-shadow: 3px 3px 1px #1d6717de;
-  margin-top: 12px;
 }
 
 #app {
@@ -41,13 +26,12 @@ body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5px;
+  margin-top: 55px;
   display: flex;
 }
 
 #container {
   display: flex;
-  margin-top: 50px;
 }
 
 #box1 {
@@ -67,17 +51,17 @@ body {
 
 #update-feed {
   margin-bottom: 10px;
-  transition-duration: 0.2s;
-  background-color: #061e0d;
-  color: #4ef341;
-  border: 2px solid #289120de;
-  border-radius: 5px;
-  font-size: 14px;
-  font-family: appleII, sans-serif;
+  margin-right: 5px;
   padding-top: 6px;
   padding-bottom: 4px;
+  background-color: #061e0d;
+  border: 2px solid #289120de;
+  border-radius: 5px;
+  color: #4ef341;
+  font-size: 14px;
+  font-family: appleII, sans-serif;
   letter-spacing: -1px;
-  margin-right: 5px;
+  transition-duration: 0.2s;
 }
 
 #update-feed:hover {
@@ -95,39 +79,39 @@ body {
 input[type=text] {
   background-color: #061e0d;
   color: #4ef341;
+  font-family: appleII, sans-serif;
   border: 2px solid #289120de;
   border-radius: 3px;
   width: 207px;
-  font-family: appleII, sans-serif;
   margin-bottom: 5px;
   margin-top: 2px;
 }
 
 textarea {
   background-color: #061e0d;
+  font-family: appleII, sans-serif;
   color: #4ef341;
   border: 2px solid #289120de;
   border-radius: 3px;
-  font-family: appleII, sans-serif;
   resize: none;
   margin-top: 2px;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type=submit] {
   transition-duration: 0.2s;
   background-color: #061e0d;
-  color: #4ef341;
-  border: 2px solid #289120de;
-  border-radius: 5px;
   font-size: 14px;
   font-family: appleII, sans-serif;
+  color: #4ef341;
+  letter-spacing: -1px;
+  border: 2px solid #289120de;
+  border-radius: 5px;
   padding-top: 6px;
   padding-bottom: 4px;
-  letter-spacing: -1px;
   margin-top: 5px;
 }
 
-input[type=button]:hover , input[type=submit]:hover {
+input[type=submit]:hover {
   background-color: #289120de;
   color: #4ef341;
   cursor: pointer;
@@ -140,13 +124,6 @@ input:focus, textarea:focus {
 }
 
 .tweet {
-  margin: 0px 5px 20px 5px;
-  padding: 8px 5px 10px 5px;
-  height: 102px;
-  width: 473px;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 2px;
   display: grid;
   grid-template-columns: 40px 1fr 1fr 1fr 1fr 40px;
   grid-template-rows: 19px 1fr 1fr 15px;
@@ -157,39 +134,29 @@ input:focus, textarea:focus {
     ". icon1 icon2 icon3 icon4 .";
   column-gap: 5px;
   row-gap: 5px;
+  margin: 0px 5px 20px 5px;
+  padding: 8px 5px 10px 5px;
+  height: 102px;
+  width: 473px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 2px;
   box-shadow: 3px 3px 1px #1d6717de;
 }
 
-.pic {
-  height: 34px;
-  width: 34px;
-  grid-area: img;
-  border-style: solid;
-  border-radius: 3px;
-  border-width: 3px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 36px;
-  font-size: 17px;
-  background-color: #0b3517;
-  text-shadow: 1px 3px 1px #1d6717de;
-}
-
-
 .profile-photo {
+  grid-area: img;
   width: 34px;
   height: 34px;
-  grid-area: img;
   border-style: solid;
   border-radius: 3px;
   border-width: 2px;
   padding: 1px;
 }
 
-
 .username {
-  font-size: 14px;
   grid-area: user;
+  font-size: 14px;
   color: #25821ede;
 }
 
@@ -199,17 +166,17 @@ input:focus, textarea:focus {
 }
 
 .timestamp {
-  font-size: 10px;
-  justify-self: end;
   grid-area: time;
+  justify-self: end;
+  font-size: 10px;  
   font-style: italic;
   color: #299021de;
 }
 
 .message {
-  font-size: 17px;
   grid-area: message;
   justify-self: start;
+  font-size: 17px;
   line-height: 120%;
 }
 
@@ -252,12 +219,9 @@ input:focus, textarea:focus {
 
 ul {
   list-style-type: none;
+  line-height: 19px;
   padding: 0;
   margin-top: 5px;
-  line-height: 19px;
-}
-
-li {
   color: #25821ede;
 }
 
