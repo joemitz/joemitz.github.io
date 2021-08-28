@@ -3,18 +3,18 @@
   src: url(assets/fonts/appleII.ttf);
 }
 
+html, body {
+  background-color: #061e0d;
+  font-family: appleII, sans-serif;
+  color: #4ef341;
+  font-size: 15px;
+}
+
 #header h1 {
   margin-top: 12px;
   letter-spacing: 1px;
   text-align: center;
   text-shadow: 3px 3px 1px #1d6717de;
-}
-
-body {
-  background-color: #061e0d;
-  font-family: appleII, sans-serif;
-  color: #4ef341;
-  font-size: 15px;
 }
 
 #app {
@@ -85,6 +85,7 @@ input[type=text] {
   width: 207px;
   margin-bottom: 5px;
   margin-top: 2px;
+  font-size: 14px;
 }
 
 textarea {
@@ -95,6 +96,9 @@ textarea {
   border-radius: 3px;
   resize: none;
   margin-top: 2px;
+  width: 207px;
+  height: 75px;
+  font-size: 14px;
 }
 
 input[type=submit] {
