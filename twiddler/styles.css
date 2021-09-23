@@ -1,0 +1,235 @@
+@font-face { 
+  font-family: appleII;
+  src: url(assets/fonts/appleII.ttf);
+}
+
+html, body {
+  background-color: #061e0d;
+  font-family: appleII, sans-serif;
+  color: #4ef341;
+  font-size: 15px;
+}
+
+#header h1 {
+  margin-top: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 3px 3px 1px #1d6717de;
+}
+
+#app {
+  position: absolute;
+  width: 1000px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+  display: flex;
+}
+
+#container {
+  display: flex;
+}
+
+#box1 {
+  text-align: right;
+  width: 250px;
+}
+
+#box2 {
+  overflow: auto;
+  width: 500px;
+}
+
+#box3 {
+  text-align: left;
+  width: 250px;
+}
+
+#update-feed {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  background-color: #061e0d;
+  border: 2px solid #289120de;
+  border-radius: 5px;
+  color: #4ef341;
+  font-size: 14px;
+  font-family: appleII, sans-serif;
+  letter-spacing: -1px;
+  transition-duration: 0.2s;
+}
+
+#update-feed:hover {
+  background-color: #289120de;
+  color: #4ef341;
+  cursor: pointer;
+  border: 2px solid #289120de;
+}
+
+#new-tweet-form {
+  line-height: 20px;
+  margin-right: 5px;
+}
+
+input[type=text] {
+  background-color: #061e0d;
+  color: #4ef341;
+  font-family: appleII, sans-serif;
+  border: 2px solid #289120de;
+  border-radius: 3px;
+  width: 207px;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+textarea {
+  background-color: #061e0d;
+  font-family: appleII, sans-serif;
+  color: #4ef341;
+  border: 2px solid #289120de;
+  border-radius: 3px;
+  resize: none;
+  margin-top: 2px;
+  width: 207px;
+  height: 75px;
+  font-size: 14px;
+}
+
+input[type=submit] {
+  transition-duration: 0.2s;
+  background-color: #061e0d;
+  font-size: 14px;
+  font-family: appleII, sans-serif;
+  color: #4ef341;
+  letter-spacing: -1px;
+  border: 2px solid #289120de;
+  border-radius: 5px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  margin-top: 5px;
+}
+
+input[type=submit]:hover {
+  background-color: #289120de;
+  color: #4ef341;
+  cursor: pointer;
+  border: 2px solid #289120de;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #4ef341;;
+}
+
+.tweet {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr 1fr 1fr 40px;
+  grid-template-rows: 19px 1fr 1fr 15px;
+  grid-template-areas:
+    "img user user time time time"
+    "img message message message message message"
+    ". message message message message message"
+    ". icon1 icon2 icon3 icon4 .";
+  column-gap: 5px;
+  row-gap: 5px;
+  margin: 0px 5px 20px 5px;
+  padding: 8px 5px 10px 5px;
+  height: 102px;
+  width: 473px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 2px;
+  box-shadow: 3px 3px 1px #1d6717de;
+}
+
+.profile-photo {
+  grid-area: img;
+  width: 34px;
+  height: 34px;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 2px;
+  padding: 1px;
+}
+
+.username {
+  grid-area: user;
+  font-size: 14px;
+  color: #25821ede;
+}
+
+.username:hover {
+  color: #4ef341;
+  cursor: pointer;
+}
+
+.timestamp {
+  grid-area: time;
+  justify-self: end;
+  font-size: 10px;  
+  font-style: italic;
+  color: #299021de;
+}
+
+.message {
+  grid-area: message;
+  justify-self: start;
+  font-size: 17px;
+  line-height: 120%;
+}
+
+.fa-comment {
+  grid-area: icon1;
+  justify-self: center;
+}
+
+.fa-retweet {
+  grid-area: icon2;
+  justify-self: center;
+} 
+
+.fa-heart {
+  grid-area: icon3;
+  justify-self: center;
+}
+
+.fa-share {
+  grid-area: icon4;
+  justify-self: center;
+}
+
+.fa-comment, .fa-retweet, 
+.fa-heart, .fa-share {
+  color: #25821ede;
+  cursor: pointer;
+}
+
+.fa-comment:hover, .fa-retweet:hover, 
+.fa-heart:hover, .fa-share:hover {
+  color: #4ef341;
+  cursor: pointer;
+}
+
+#friends {
+  margin-left: 5px;
+  margin-top: 1px
+}
+
+ul {
+  list-style-type: none;
+  line-height: 19px;
+  padding: 0;
+  margin-top: 5px;
+  color: #25821ede;
+}
+
+li:hover {
+  color: #4ef341;
+  cursor: pointer;
+}
