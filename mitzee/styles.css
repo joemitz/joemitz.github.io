@@ -19,13 +19,13 @@ html, body {
   align-items: center;
 }
 
-img.hide {
-  display: none;
-}
-
 img {
   height: 42px;
   width: 42px;
+}
+
+img.hide {
+  display: none;
 }
 
 #app {
@@ -149,4 +149,11 @@ img {
   animation: pulsate 1s ease-out;
   animation-iteration-count: infinite;
   opacity: 0.5;
+}
+
+@media screen and (max-width: 1000px) {
+  #app {
+    flex-direction: column;
+    zoom: 100%;
+  }
 }
