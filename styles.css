@@ -1,9 +1,19 @@
 html, body {
-  background-color: #26323f;
-  color: #03fca1;
+  background-color: #000000;
+  color: #ffffff;
   font-size: 20px;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 a {
-  color: #03fca1;
+  color: #ffffff;
+}
+
+#content {
+  border-style: solid;
+  padding: 10px;
+  border-radius: 5px;
 }
